@@ -2,15 +2,15 @@
 {
     public static class SimHash
     {
-        public static uint Hash(string text, int sensitivity = 32)
+        public static uint Hash(string text, int hashLength = 32)
         {
-            if (sensitivity > 32)
+            if (hashLength > 32)
             {
-                throw new ArgumentException("Sensitivity argument must not be greater than 32");
+                throw new ArgumentException("hashLength argument must not be greater than 32");
             }
-            else if (sensitivity < 1)
+            else if (hashLength < 1)
             {
-                throw new ArgumentException("Sensitivity argument must not be less than 1");
+                throw new ArgumentException("hashLength argument must not be less than 1");
             }
 
             List<string> tokens = GetTokens(text);
@@ -19,7 +19,7 @@
 
             uint hash = 0;
 
-            for (int i = 0; i < sensitivity; i++)
+            for (int i = 0; i < hashLength; i++)
             {
                 hash = (hash << 1);
 
