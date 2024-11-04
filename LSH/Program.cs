@@ -24,13 +24,13 @@
             uint hash5 = SimHash.Hash(poem2, 32);
             Console.WriteLine(Convert.ToString(hash5, 2).PadLeft(32, '0'));
 
-            Console.WriteLine(SimHash.HammingDistance(hash1, hash2));
-            Console.WriteLine(SimHash.HammingDistance(hash1, hash3));
-            Console.WriteLine(SimHash.HammingDistance(hash2, hash3));
+            Console.WriteLine(BinaryOperations.HammingDistance(hash1, hash2));
+            Console.WriteLine(BinaryOperations.HammingDistance(hash1, hash3));
+            Console.WriteLine(BinaryOperations.HammingDistance(hash2, hash3));
 
-            Console.WriteLine(SimHash.HammingDistance(hash2, hash4));
+            Console.WriteLine(BinaryOperations.HammingDistance(hash2, hash4));
 
-            Console.WriteLine(SimHash.HammingDistance(hash4, hash5));
+            Console.WriteLine(BinaryOperations.HammingDistance(hash4, hash5));
         }
     }
 
