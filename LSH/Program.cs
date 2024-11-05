@@ -12,29 +12,27 @@
             string poem3 = IO.ReadFile("poem3.txt");
             string poem4 = IO.ReadFile("poem4.txt");
 
-            // Hello World Hashes
-            uint hash1 = SimHash.Hash(hello_world, 32);
-            Console.WriteLine(Convert.ToString(hash1, 2).PadLeft(32, '0'));
-            uint hash2 = SimHash.Hash(hello_world2, 32);
-            Console.WriteLine(Convert.ToString(hash2, 2).PadLeft(32, '0'));
-            uint hash3 = SimHash.Hash(hello_world3, 32);
-            Console.WriteLine(Convert.ToString(hash3, 2).PadLeft(32, '0'));
+            Console.WriteLine("SimHash Similarity:");
+            Console.WriteLine($"Hello World 1 and Hello World 2: {SimHash.ComputeSimilarity(hello_world, hello_world2)}");
+            Console.WriteLine($"Hello World 1 and Hello World 3: {SimHash.ComputeSimilarity(hello_world, hello_world3)}");
+            Console.WriteLine($"Hello World 2 and Hello World 3: {SimHash.ComputeSimilarity(hello_world2, hello_world3)}");
+            Console.WriteLine($"Poem 1 and Poem 2: {SimHash.ComputeSimilarity(poem, poem2)}");
+            Console.WriteLine($"Poem 1 and Poem 3: {SimHash.ComputeSimilarity(poem, poem3)}");
+            Console.WriteLine($"Poem 1 and Poem 4: {SimHash.ComputeSimilarity(poem, poem4)}");
+            Console.WriteLine($"Poem 2 and Poem 3: {SimHash.ComputeSimilarity(poem2, poem3)}");
+            Console.WriteLine($"Poem 2 and Poem 4: {SimHash.ComputeSimilarity(poem2, poem4)}");
+            Console.WriteLine($"Poem 3 and Poem 4: {SimHash.ComputeSimilarity(poem3, poem4)}");
 
-            // Poems Hashes
-            uint hash4 = SimHash.Hash(poem, 32);
-            Console.WriteLine(Convert.ToString(hash4, 2).PadLeft(32, '0'));
-            uint hash5 = SimHash.Hash(poem2, 32);
-            Console.WriteLine(Convert.ToString(hash5, 2).PadLeft(32, '0'));
-
-            Console.WriteLine(BinaryOperations.HammingDistance(hash1, hash2));
-            Console.WriteLine(BinaryOperations.HammingDistance(hash1, hash3));
-            Console.WriteLine(BinaryOperations.HammingDistance(hash2, hash3));
-
-            Console.WriteLine(BinaryOperations.HammingDistance(hash2, hash4));
-
-            Console.WriteLine(BinaryOperations.HammingDistance(hash4, hash5));
-
-            Console.WriteLine(MinHash.ComputeSimilarity(poem4, poem3));
+            Console.WriteLine("\nMinHash Similarity:");
+            Console.WriteLine($"Hello World 1 and Hello World 2: {MinHash.ComputeSimilarity(hello_world, hello_world2)}");
+            Console.WriteLine($"Hello World 1 and Hello World 3: {MinHash.ComputeSimilarity(hello_world, hello_world3)}");
+            Console.WriteLine($"Hello World 2 and Hello World 3: {MinHash.ComputeSimilarity(hello_world2, hello_world3)}");
+            Console.WriteLine($"Poem 1 and Poem 2: {MinHash.ComputeSimilarity(poem, poem2)}");
+            Console.WriteLine($"Poem 1 and Poem 3: {MinHash.ComputeSimilarity(poem, poem3)}");
+            Console.WriteLine($"Poem 1 and Poem 4: {MinHash.ComputeSimilarity(poem, poem4)}");
+            Console.WriteLine($"Poem 2 and Poem 3: {MinHash.ComputeSimilarity(poem2, poem3)}");
+            Console.WriteLine($"Poem 2 and Poem 4: {MinHash.ComputeSimilarity(poem2, poem4)}");
+            Console.WriteLine($"Poem 3 and Poem 4: {MinHash.ComputeSimilarity(poem3, poem4)}");
         }
     }
 

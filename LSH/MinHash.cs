@@ -3,7 +3,7 @@
     public static class MinHash
     {
         private static Func<string, int, byte[]> _hashFunc = LSH.Hash.murmur3;
-        private static int _l = 100;
+        private static int _l = 200;
 
         public static List<uint> Hash(string text)
         {
