@@ -7,7 +7,7 @@
 
         public static List<uint> Hash(string text)
         {
-            List<string> tokens = GetTokens(text);
+            HashSet<string> tokens = GetTokens(text);
 
             List<uint> hash = new List<uint>(_l);
             for (int i = 0; i < _l; i++)
@@ -47,9 +47,9 @@
             return similarity;
         }
 
-        private static List<string> GetTokens(string text)
+        private static HashSet<string> GetTokens(string text)
         {
-            return text.Split(" ").ToList();
+            return text.Split(" ").ToHashSet();
         }
     }
 }
