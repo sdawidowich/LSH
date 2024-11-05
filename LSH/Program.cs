@@ -9,6 +9,8 @@
             string hello_world3 = IO.ReadFile("hello_world3.txt");
             string poem = IO.ReadFile("poem.txt");
             string poem2 = IO.ReadFile("poem2.txt");
+            string poem3 = IO.ReadFile("poem3.txt");
+            string poem4 = IO.ReadFile("poem4.txt");
 
             // Hello World Hashes
             uint hash1 = SimHash.Hash(hello_world, 32);
@@ -31,6 +33,8 @@
             Console.WriteLine(BinaryOperations.HammingDistance(hash2, hash4));
 
             Console.WriteLine(BinaryOperations.HammingDistance(hash4, hash5));
+
+            Console.WriteLine(MinHash.ComputeSimilarity(poem4, poem3));
         }
     }
 
