@@ -41,11 +41,16 @@
             return hash;
         }
 
-        public static double ComputeSimilarity(string text1, string text2)
+        public static uint ComputeSimilarity(string text1, string text2)
         {
             uint hash1 = Hash(text1);
             uint hash2 = Hash(text2);
 
+            return BinaryOperations.HammingDistance(hash1, hash2);
+        }
+
+        public static uint ComputeSimilarity(uint hash1, uint hash2)
+        {
             return BinaryOperations.HammingDistance(hash1, hash2);
         }
 

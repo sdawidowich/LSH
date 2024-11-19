@@ -47,6 +47,18 @@
             return similarity;
         }
 
+        public static double ComputeSimilarity(List<uint> text1Hashes, List<uint> text2Hashes)
+        {
+            double similarity = 0;
+            for (int i = 0; i < _l; i++)
+            {
+                similarity += (text1Hashes[i] == text2Hashes[i]) ? 1 : 0;
+            }
+            similarity /= _l;
+
+            return similarity;
+        }
+
         private static HashSet<string> GetTokens(string text)
         {
             return text.Split(" ").ToHashSet();
